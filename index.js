@@ -21,15 +21,19 @@ module.exports = function hasKeyDeep(obj, key) {
     key = key.split('.');
   }
 
+  // Termination cases
   if (key.length === 0) {
-    return true;
-  } else if (key.length === 1) {
-    return obj.hasOwnProperty(key[0]);
-  } else {
-    if (obj.hasOwnProperty(key[0])) {
+      return true;
+  }
+
+  if (key.length === 1) {
+      return obj.hasOwnProperty(key[0]);
+  }
+
+  // Recursive cases
+  if (obj.hasOwnProperty(key[0])) {
       return hasKeyDeep(obj[key[0]], key.slice(1));
-    } else {
+  } else {
       return false;
-    }
   }
 };

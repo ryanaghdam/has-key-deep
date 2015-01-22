@@ -15,4 +15,5 @@ hasKeyDeep({}, 'a') => false
 
 ## Changelog
 
-- v0.0.1 (1/22/2015)  -- Initial release.
+- v0.0.2 (1/22/2015) -- Minor refactoring for better readability.
+- v0.0.1 (1/22/2015) -- Initial release.

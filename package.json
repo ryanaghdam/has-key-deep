@@ -1,9 +1,18 @@
 {
   "name": "has-key-deep",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
       "test": "node test.js"
   },
-  "author": "Ryan Aghdam <ryan@ryanaghdam.com>"
+  "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
+  "bugs": {
+      "url": "https://github.com/ryanaghdam/has-key-deep/issues",
+      "email": "ryan@ryanaghdam.com"
+  },
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.paypal.com/raghdam/has-key-deep.git"
+  }
 }

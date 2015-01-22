@@ -12,3 +12,7 @@ hasKeyDeep({ a: { b: { c: 1 } } }, 'a.b.c.d') => true
 hasKeyDeep({ a: { b: { c: 1 } } }, 'a.c') => false
 hasKeyDeep({}, 'a') => false
 ```
+
+## Changelog
+
+- v0.0.1 (1/22/2015)  -- Initial release.

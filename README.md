@@ -15,5 +15,6 @@ hasKeyDeep({}, 'a') => false
 
 ## Changelog
 
+- v0.0.3 (2/1/2015) -- Updated repository field in package.json
 - v0.0.2 (1/22/2015) -- Minor refactoring for better readability.
 - v0.0.1 (1/22/2015) -- Initial release.

@@ -1,6 +1,6 @@
 {
   "name": "has-key-deep",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "scripts": {
       "test": "node test.js"
@@ -13,6 +13,6 @@
   "license": "MIT",
   "repository": {
       "type": "git",
-      "url": "https://github.paypal.com/raghdam/has-key-deep.git"
+      "url": "https://github.com/ryanaghdam/has-key-deep.git"
   }
 }

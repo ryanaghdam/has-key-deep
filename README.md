@@ -17,6 +17,7 @@ hasKeyDeep({}, 'a') => false
 
 ## Changelog
 
+- v1.0.0 (3/2/2016) -- Adds argument validation; mocha tests.
 - v0.0.3 (2/1/2015) -- Updated repository field in package.json
 - v0.0.2 (1/22/2015) -- Minor refactoring for better readability.
 - v0.0.1 (1/22/2015) -- Initial release.

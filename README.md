@@ -1,5 +1,7 @@
 # hasKeyDeep
 
+![Travis CI Status](https://travis-ci.org/ryanaghdam/has-key-deep.svg?branch=master)
+
 Deep-search objects for keys.  Keys can be searched by providing an array of
 keys, or using a dot-notiation.
 

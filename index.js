@@ -14,25 +14,34 @@
 //    hasKeyDeep({ a: { b: { c: 1 } } }, 'a.b.c.d') => true
 //    hasKeyDeep({ a: { b: { c: 1 } } }, 'a.c') => false
 //    hasKeyDeep({}, 'a') => false
-module.exports = function hasKeyDeep(obj, key) {
+module.exports = function hasKeyDeep(object, key) {
+  if (typeof object === 'undefined') {
+    throw new Error('object is required');
+  }
+
+  if (typeof key === 'undefined') {
+    throw new Error('key is required');
+  }
+
   // key is a string, then reassign it to an array-representation of the
   // value.
   if (typeof key === 'string') {
     key = key.split('.');
   }
 
-  // Termination cases
+  // Termination case (1)
   if (key.length === 0) {
       return true;
   }
 
+  // Termination case (2)
   if (key.length === 1) {
-      return obj.hasOwnProperty(key[0]);
+      return object.hasOwnProperty(key[0]);
   }
 
-  // Recursive cases
-  if (obj.hasOwnProperty(key[0])) {
-      return hasKeyDeep(obj[key[0]], key.slice(1));
+  // Recursive case
+  if (object.hasOwnProperty(key[0])) {
+      return hasKeyDeep(object[key[0]], key.slice(1));
   } else {
       return false;
   }

@@ -1,18 +1,21 @@
 {
   "name": "has-key-deep",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-      "test": "node test.js"
+    "test": "mocha"
   },
   "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
   "bugs": {
-      "url": "https://github.com/ryanaghdam/has-key-deep/issues",
-      "email": "ryan@ryanaghdam.com"
+    "url": "https://github.com/ryanaghdam/has-key-deep/issues",
+    "email": "ryan@ryanaghdam.com"
   },
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/ryanaghdam/has-key-deep.git"
+    "type": "git",
+    "url": "https://github.com/ryanaghdam/has-key-deep.git"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
   }
 }

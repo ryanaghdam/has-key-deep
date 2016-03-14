@@ -4,89 +4,72 @@ var hasKeyDeep = require('./index');
 describe('hasKeyDeep()', function () {
   var testObject = { a: { b: { c: 1 } } };
 
-  context('key is not defined', function () {
-    it('should throw an error', function () {
-      assert.throws(function () {
-        hasKeyDeep({});
-      }, /key is required/);
-    });
-  });
-
-  context('object is not defined', function () {
-    it('should throw an error', function () {
-      assert.throws(function () {
-        hasKeyDeep();
-      }, /object is required/);
-    });
-  });
-
   context('empty object', function () {
     it('should return false when query is a string', function () {
-      var result = hasKeyDeep({}, 'a.b');
+      var result = hasKeyDeep('a.b', {});
       assert(!result, 'result should be false');
     });
 
     it('should return false when query is an array', function () {
-      var result = hasKeyDeep({}, ['a', 'b']);
+      var result = hasKeyDeep(['a', 'b'], {});
       assert(!result, 'result should be false');
     });
   });
 
   context('valid string queries', function () {
     it('should return true when the key is present (1)', function () {
-      assert(hasKeyDeep(testObject, 'a'));
+      assert(hasKeyDeep('a', testObject));
     });
 
     it('should return true when the key is present (2)', function () {
-      assert(hasKeyDeep(testObject, 'a.b'));
+      assert(hasKeyDeep('a.b', testObject));
     });
 
     it('should return true when the key is present (3)', function () {
-      assert(hasKeyDeep(testObject, 'a.b.c'));
+      assert(hasKeyDeep('a.b.c', testObject));
     });
   });
 
   context('valid array queries', function () {
     it('should return true when the key is present (1)', function () {
-      assert(hasKeyDeep(testObject, ['a']));
+      assert(hasKeyDeep(['a'], testObject));
     });
 
     it('should return true when the key is present (2)', function () {
-      assert(hasKeyDeep(testObject, ['a', 'b']));
+      assert(hasKeyDeep(['a', 'b'], testObject));
     });
 
     it('should return true when the key is present (3)', function () {
-      assert(hasKeyDeep(testObject, ['a', 'b', 'c']));
+      assert(hasKeyDeep(['a', 'b', 'c'], testObject));
     });
   });
 
   context('invalid string queries', function () {
     it('should return false when the key is not present (1)', function () {
-      assert(!hasKeyDeep(testObject, 'a.b.c.d'));
+      assert(!hasKeyDeep('a.b.c.d', testObject));
     });
 
     it('should return false when the key is not present (2)', function () {
-      assert(!hasKeyDeep(testObject, 'a.c'));
+      assert(!hasKeyDeep('a.c', testObject));
     });
 
     it('should return false when the key is not present (3)', function () {
-      assert(!hasKeyDeep(testObject, 'c'));
+      assert(!hasKeyDeep('c', testObject));
     });
   });
 
   context('invalid array queries', function () {
     it('should return false when the key is not present (1)', function () {
-      assert(!hasKeyDeep(testObject, ['a', 'b', 'c', 'd']));
+      assert(!hasKeyDeep(['a', 'b', 'c', 'd'], testObject));
     });
 
     it('should return false when the key is not present (2)', function () {
-      assert(!hasKeyDeep(testObject, ['a', 'c']));
+      assert(!hasKeyDeep(['a', 'c'], testObject));
     });
 
     it('should return false when the key is not present (3)', function () {
-      assert(!hasKeyDeep(testObject, ['c']));
+      assert(!hasKeyDeep(['c'], testObject));
     });
+  });
 });
-});
-
 

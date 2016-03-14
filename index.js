@@ -1,28 +1,13 @@
-// hasKeyDeep(object, key) -> boolean
+var R = require('ramda');
+
+// hasKeyDeep(key, object) -> boolean
 //
 // Key is one of:
 //   - an array of key names, or
 //   - a single, dot-separated string.
 //
-//
 // Return true of the object has a matching key.
-//
-// Examples:
-//
-//    hasKeyDeep({ a: { b: { c: 1 } } }, 'a.b.c') => true
-//    hasKeyDeep({ a: { b: { c: 1 } } }, ['a', 'b', 'c']) => true
-//    hasKeyDeep({ a: { b: { c: 1 } } }, 'a.b.c.d') => true
-//    hasKeyDeep({ a: { b: { c: 1 } } }, 'a.c') => false
-//    hasKeyDeep({}, 'a') => false
-module.exports = function hasKeyDeep(object, key) {
-  if (typeof object === 'undefined') {
-    throw new Error('object is required');
-  }
-
-  if (typeof key === 'undefined') {
-    throw new Error('key is required');
-  }
-
+function hasKeyDeep(key, object) {
   // key is a string, then reassign it to an array-representation of the
   // value.
   if (typeof key === 'string') {
@@ -41,8 +26,10 @@ module.exports = function hasKeyDeep(object, key) {
 
   // Recursive case
   if (object.hasOwnProperty(key[0])) {
-      return hasKeyDeep(object[key[0]], key.slice(1));
+      return hasKeyDeep(key.slice(1), object[key[0]]);
   } else {
       return false;
   }
 };
+
+module.exports = R.curry(hasKeyDeep);

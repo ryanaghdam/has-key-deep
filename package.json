@@ -1,6 +1,6 @@
 {
   "name": "has-key-deep",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "ramda": "^0.19.1"
   }
 }

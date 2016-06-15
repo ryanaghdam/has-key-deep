@@ -3,6 +3,7 @@ var hasKeyDeep = require('./index');
 
 describe('hasKeyDeep()', function () {
   var testObject = { a: { b: { c: 1 } } };
+  var testObjectForNullObjects = { a: { b: null } }
 
   context('empty object', function () {
     it('should return false when query is a string', function () {
@@ -28,6 +29,11 @@ describe('hasKeyDeep()', function () {
     it('should return true when the key is present (3)', function () {
       assert(hasKeyDeep('a.b.c', testObject));
     });
+    it('should not throw when object is null in path', function () {
+      assert.doesNotThrow(function () {
+        hasKeyDeep('a.b.c', testObjectForNullObjects)
+      });
+    });
   });
 
   context('valid array queries', function () {
@@ -41,6 +47,11 @@ describe('hasKeyDeep()', function () {
 
     it('should return true when the key is present (3)', function () {
       assert(hasKeyDeep(['a', 'b', 'c'], testObject));
+    });
+    it('should not throw when object is null in path', function () {
+      assert.doesNotThrow(function () {
+        hasKeyDeep(['a', 'b', 'c'], testObjectForNullObjects)
+      });
     });
   });
 

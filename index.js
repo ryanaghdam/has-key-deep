@@ -19,6 +19,10 @@ function hasKeyDeep(key, object) {
       return true;
   }
 
+  if (!object) {
+      return false;
+  }
+
   // Termination case (2)
   if (key.length === 1) {
       return object.hasOwnProperty(key[0]);

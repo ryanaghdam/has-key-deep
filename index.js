@@ -21,7 +21,7 @@ function hasKeyDeep(key, object) {
 
   // Termination case (2)
   if (key.length === 1) {
-      return object.hasOwnProperty(key[0]);
+      return (object !== null) && object.hasOwnProperty(key[0]);
   }
 
   // Recursive case

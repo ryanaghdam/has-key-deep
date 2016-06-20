@@ -28,6 +28,10 @@ describe('hasKeyDeep()', function () {
     it('should return true when the key is present (3)', function () {
       assert(hasKeyDeep('a.b.c', testObject));
     });
+
+    it('should return true if the value is null', function () {
+      assert(!hasKeyDeep('b.c', { a: { b: null } }));
+    });
   });
 
   context('valid array queries', function () {
@@ -69,6 +73,10 @@ describe('hasKeyDeep()', function () {
 
     it('should return false when the key is not present (3)', function () {
       assert(!hasKeyDeep(['c'], testObject));
+    });
+
+    it('should return true if the value is null', function () {
+      assert(!hasKeyDeep(['b', 'c'], { a: { b: null } }));
     });
   });
 });

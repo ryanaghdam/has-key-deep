@@ -32,6 +32,8 @@ hasAbc({a: 1 }) => false
 Changelog
 ---------
 
+- v2.1.1: Adds ESLint
+- v2.1.0: Adds support for `null` values (6/20/2016)
 - v2.0.0: Switches order of arguments, provides curried function if only one is
 supplied. (3/14/2016)
 - v1.0.1: Updates build status in README (3/3/2016)

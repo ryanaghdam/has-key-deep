@@ -1,9 +1,11 @@
 {
   "name": "has-key-deep",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "mocha": "mocha test.js",
+    "eslint": "eslint index.js test.js",
+    "test": "npm run eslint && npm run mocha"
   },
   "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
   "bugs": {
@@ -16,6 +18,10 @@
     "url": "https://github.com/ryanaghdam/has-key-deep.git"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.5",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-es5": "^1.0.9",
+    "eslint-plugin-react": "^5.2.2",
     "mocha": "^2.4.5"
   },
   "dependencies": {

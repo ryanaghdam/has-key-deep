@@ -1,11 +1,13 @@
 {
   "name": "has-key-deep",
+  "description": "Determines if an object has a deeply-nested key",
   "version": "2.1.1",
   "main": "index.js",
   "scripts": {
     "mocha": "mocha test.js",
     "eslint": "eslint index.js test.js",
-    "test": "npm run eslint && npm run mocha"
+    "test": "npm run eslint && npm run mocha",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
   "bugs": {

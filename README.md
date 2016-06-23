@@ -32,6 +32,7 @@ hasAbc({a: 1 }) => false
 Changelog
 ---------
 
+- v2.1.2: Adds `patch-release` NPM script and adds project description
 - v2.1.1: Adds ESLint
 - v2.1.0: Adds support for `null` values (6/20/2016)
 - v2.0.0: Switches order of arguments, provides curried function if only one is

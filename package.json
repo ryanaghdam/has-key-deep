@@ -1,7 +1,7 @@
 {
   "name": "has-key-deep",
   "description": "Determines if an object has a deeply-nested key",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "index.js",
   "scripts": {
     "mocha": "mocha test.js",

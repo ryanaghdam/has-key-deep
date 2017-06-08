@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha test.js",
-    "eslint": "eslint index.js test.js",
-    "test": "npm run eslint && npm run mocha",
+    "test": "npm run mocha",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "minor-release": "npm version minor && npm publish && git push --follow-tags",
     "major-release": "npm version major && npm publish && git push --follow-tags"
@@ -22,13 +21,6 @@
     "url": "https://github.com/ryanaghdam/has-key-deep.git"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.5",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb-es5": "^1.0.9",
-    "eslint-plugin-react": "^5.2.2",
     "mocha": "^2.4.5"
-  },
-  "dependencies": {
-    "ramda": "^0.19.1"
   }
 }

@@ -1,5 +1,3 @@
-var R = require('ramda');
-
 // hasKeyDeep(key, object) -> boolean
 //
 // Key is one of:
@@ -32,4 +30,12 @@ function hasKeyDeep(key, object) {
   return false;
 }
 
-module.exports = R.curry(hasKeyDeep);
+module.exports = function (key, object) {
+  if (typeof object === 'undefined') {
+    return function (o) {
+      return hasKeyDeep(key, o);
+    };
+  }
+
+  return hasKeyDeep(key, object);
+};

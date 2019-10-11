@@ -17,9 +17,14 @@ function hasKeyDeep(key, object) {
     return true;
   }
 
-  // Termination case (2)
+   // Termination case (2)
+  if (!object) {
+    return false;
+  }
+
+  // Termination case (3)
   if (key.length === 1) {
-    return (object !== null) && object.hasOwnProperty(key[0]);
+    return object.hasOwnProperty(key[0]);
   }
 
   // Recursive case

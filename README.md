@@ -28,18 +28,3 @@ var hasABC = hasKeyDeep('a.b.c');
 hasAbc({a: { b: { c: 1 } } }) => true
 hasAbc({a: 1 }) => false
 ```
-
-Changelog
----------
-- v2.2.1: Handles avoid errors when accessing children of null/undefined
-- v2.1.4: Adds `minor-` and `major-release` NPM scripts
-- v2.1.3: Adds `patch-release` NPM script and adds project description
-- v2.1.1: Adds ESLint
-- v2.1.0: Adds support for `null` values (6/20/2016)
-- v2.0.0: Switches order of arguments, provides curried function if only one is
-supplied. (3/14/2016)
-- v1.0.1: Updates build status in README (3/3/2016)
-- v1.0.0: Adds argument validation; mocha tests (3/2/2016)
-- v0.0.3: Updated repository field in package.json (2/1/2015)
-- v0.0.2: Minor refactoring for better readability (1/22/2015)
-- v0.0.1: Initial release (1/22/2015)

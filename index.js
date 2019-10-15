@@ -35,12 +35,13 @@ function hasKeyDeep(key, object) {
   return false;
 }
 
-module.exports = function (...args) {
+module.exports = function () {
+  const args = arguments;
   if (args.length === 1) {
     return function (o) {
       return hasKeyDeep(args[0], o);
     };
   }
 
-  return hasKeyDeep(...args);
+  return hasKeyDeep(args[0], args[1]);
 };

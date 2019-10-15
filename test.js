@@ -84,7 +84,7 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep('a.b.c', { a: undefined }));
       });
 
-      it('should return false when the object is undefined', () => {
+      it('should return false when the object is undefined', function() {
         assert(!hasKeyDeep('a.b.c', undefined));
       });
     });
@@ -110,7 +110,7 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep(['a', 'b', 'c'], { a: undefined }));
       });
 
-      it('should return false when the object is undefined', () => {
+      it('should return false when the object is undefined', function() {
         assert(!hasKeyDeep(['a', 'b', 'c'], undefined));
       });
     });
@@ -194,7 +194,7 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep('a.b.c')({ a: undefined }));
       });
 
-      it('should return false when the object is undefined', () => {
+      it('should return false when the object is undefined', function() {
         assert(!hasKeyDeep('a.b.c')(undefined));
       });
     });
@@ -220,7 +220,7 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep(['a', 'b', 'c'])({ a: undefined }));
       });
 
-      it('should return false when the object is undefined', () => {
+      it('should return false when the object is undefined', function() {
         assert(!hasKeyDeep(['a', 'b', 'c'])(undefined));
       });
     });

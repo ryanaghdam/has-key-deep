@@ -31,7 +31,7 @@ hasAbc({a: 1 }) => false
 
 Changelog
 ---------
-
+- v2.2.1: Handles avoid errors when accessing children of null/undefined
 - v2.1.4: Adds `minor-` and `major-release` NPM scripts
 - v2.1.3: Adds `patch-release` NPM script and adds project description
 - v2.1.1: Adds ESLint

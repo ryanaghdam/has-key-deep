@@ -33,7 +33,11 @@ describe('hasKeyDeep()',  function() {
       });
 
       it('should return true if the value is null',  function() {
-        assert(!hasKeyDeep('b.c', { a: { b: null } }));
+        assert(hasKeyDeep('a.b', { a: { b: null } }));
+      });
+
+      it('should return true if the value is undefined',  function() {
+        assert(hasKeyDeep('a.b', { a: { b: undefined } }));
       });
     });
 
@@ -49,6 +53,14 @@ describe('hasKeyDeep()',  function() {
       it('should return true when the key is present (3)',  function() {
         assert(hasKeyDeep(['a', 'b', 'c'], testObject));
       });
+
+      it('should return true if the value is null',  function() {
+        assert(hasKeyDeep(['a', 'b'], { a: { b: null } }));
+      });
+
+      it('should return true if the value is undefined',  function() {
+        assert(hasKeyDeep(['a', 'b'], { a: { b: undefined } }));
+      });
     });
 
     context('invalid string queries',  function() {
@@ -62,6 +74,14 @@ describe('hasKeyDeep()',  function() {
 
       it('should return false when the key is not present (3)',  function() {
         assert(!hasKeyDeep('c', testObject));
+      });
+
+      it('should return false when an earlier value is null',  function() {
+        assert(!hasKeyDeep('a.b.c', { a: null }));
+      });
+
+      it('should return false when an earlier value is undefined',  function() {
+        assert(!hasKeyDeep('a.b.c', { a: undefined }));
       });
     });
 
@@ -78,8 +98,12 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep(['c'], testObject));
       });
 
-      it('should return true if the value is null',  function() {
-        assert(!hasKeyDeep(['b', 'c'], { a: { b: null } }));
+      it('should return false when an earlier value is null',  function() {
+        assert(!hasKeyDeep(['a', 'b', 'c'], { a: null }));
+      });
+
+      it('should return false when an earlier value is undefined',  function() {
+        assert(!hasKeyDeep(['a', 'b', 'c'], { a: undefined }));
       });
     });
   });
@@ -111,7 +135,11 @@ describe('hasKeyDeep()',  function() {
       });
 
       it('should return true if the value is null',  function() {
-        assert(!hasKeyDeep('b.c')({ a: { b: null } }));
+        assert(hasKeyDeep('a.b')({ a: { b: null } }));
+      });
+
+      it('should return true if the value is undefined',  function() {
+        assert(hasKeyDeep('a.b')({ a: { b: undefined } }));
       });
     });
 
@@ -127,6 +155,14 @@ describe('hasKeyDeep()',  function() {
       it('should return true when the key is present (3)',  function() {
         assert(hasKeyDeep(['a', 'b', 'c'])(testObject));
       });
+
+      it('should return true if the value is null',  function() {
+        assert(hasKeyDeep(['a', 'b'])({ a: { b: null } }));
+      });
+
+      it('should return true if the value is undefined',  function() {
+        assert(hasKeyDeep(['a', 'b'])({ a: { b: undefined } }));
+      });
     });
 
     context('invalid string queries',  function() {
@@ -140,6 +176,14 @@ describe('hasKeyDeep()',  function() {
 
       it('should return false when the key is not present (3)',  function() {
         assert(!hasKeyDeep('c')(testObject));
+      });
+
+      it('should return false when an earlier value is null',  function() {
+        assert(!hasKeyDeep('a.b.c')({ a: null }));
+      });
+
+      it('should return false when an earlier value is undefined',  function() {
+        assert(!hasKeyDeep('a.b.c')({ a: undefined }));
       });
     });
 
@@ -156,8 +200,12 @@ describe('hasKeyDeep()',  function() {
         assert(!hasKeyDeep(['c'])(testObject));
       });
 
-      it('should return true if the value is null',  function() {
-        assert(!hasKeyDeep(['b', 'c'])({ a: { b: null } }));
+      it('should return false when an earlier value is null',  function() {
+        assert(!hasKeyDeep(['a', 'b', 'c'])({ a: null }));
+      });
+
+      it('should return false when an earlier value is undefined',  function() {
+        assert(!hasKeyDeep(['a', 'b', 'c'])({ a: undefined }));
       });
     });
   });

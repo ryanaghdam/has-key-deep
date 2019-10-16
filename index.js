@@ -8,8 +8,8 @@
 function hasKeyDeep(key, object) {
   // key is a string, then call the function with an array representation of
   // the value
-  if (typeof key === "string") {
-    return hasKeyDeep(key.split("."), object);
+  if (typeof key === 'string') {
+    return hasKeyDeep(key.split('.'), object);
   }
 
   // Termination case (1)
@@ -17,7 +17,7 @@ function hasKeyDeep(key, object) {
     return true;
   }
 
-  // Termination case (2)
+   // Termination case (2)
   if (!object) {
     return false;
   }
@@ -35,9 +35,9 @@ function hasKeyDeep(key, object) {
   return false;
 }
 
-module.exports = function(key, object) {
+module.exports = function (key, object) {
   if (arguments.length === 1) {
-    return function(o) {
+    return function (o) {
       return hasKeyDeep(key, o);
     };
   }

@@ -36,7 +36,7 @@ function hasKeyDeep(key, object) {
 }
 
 module.exports = function (key, object) {
-  if (typeof object === 'undefined') {
+  if (arguments.length === 1) {
     return function (o) {
       return hasKeyDeep(key, o);
     };
